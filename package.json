@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/alexisbcc/pico-y-placa/issues"
   },
-  "homepage": "https://github.com/alexisbcc/pico-y-placa#readme"
+  "homepage": "https://github.com/alexisbcc/pico-y-placa#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }
