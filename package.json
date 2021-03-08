@@ -1,0 +1,22 @@
+{
+  "name": "pico-y-placa",
+  "version": "0.1.0",
+  "description": "Pico&Placa predictor",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexisbcc/pico-y-placa.git"
+  },
+  "keywords": [
+    "pico&placa"
+  ],
+  "author": "Alexis Crespo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexisbcc/pico-y-placa/issues"
+  },
+  "homepage": "https://github.com/alexisbcc/pico-y-placa#readme"
+}
