@@ -58,19 +58,19 @@ describe("Validation of time input", () => {
     expect(timeInput(time, validator).isValid).toBe(false);
   });
 
-  test("Should convert time input to decimal minutes", () => {
+  test("Should convert time input to decimal hour", () => {
     const time = "16:6";
-    expect(timeInput(time, validator).toDecimalMinutes()).toBe(16.1);
+    expect(timeInput(time, validator).toDecimalHour()).toBe(16.1);
   });
 
-  test("Should convert time input to decimal minutes", () => {
+  test("Should convert time input to decimal hour", () => {
     const time = "0:0";
-    expect(timeInput(time, validator).toDecimalMinutes()).toBe(0);
+    expect(timeInput(time, validator).toDecimalHour()).toBe(0);
   });
 
-  test("Should convert time input to decimal minutes -1", () => {
+  test("Should convert time input to decimal hour -1", () => {
     const time = "j6:6l";
-    expect(timeInput(time, validator).toDecimalMinutes()).toBe(-1);
+    expect(timeInput(time, validator).toDecimalHour()).toBe(-1);
   });
 });
 
