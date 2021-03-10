@@ -77,8 +77,17 @@ describe("Validation of time input", () => {
 describe("Validation of date input", () => {
   let validator;
   beforeEach(() => {
-    validator = (input) =>
-      /^[0-9]{4}[/.][0-9]{1,2}[/.][0-9]{1,2}$/gm.test(input);
+    validator = (input) => {
+      let isValidDate;
+      if (/^[0-9]{4}[/][0-9]{1,2}[/][0-9]{1,2}$/gm.test(input)) {
+        const [year, month, day] = input.split("/");
+        const date = new Date(`${year}-${month}-${day} 00:00`);
+        isValidDate = Boolean(+date) && date.getDate() == day;
+      } else {
+        isValidDate = false;
+      }
+      return isValidDate;
+    };
   });
 
   test("Should validate time input", () => {
