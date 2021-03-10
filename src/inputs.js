@@ -15,7 +15,9 @@ const convertToDecimalHour = (state) => ({
 
 const getDayOfWeek = (state) => ({
   getWeekDay: () => {
-    const [year, month, day] = state.value.split("/");
+    const [year, month, day] = state.value
+      .split("/")
+      .map((val) => parseInt(val, 10));
     const date = new Date(year, month - 1, day);
     return state.isValid ? date.getUTCDay() : -1;
   },
