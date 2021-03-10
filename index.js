@@ -3,13 +3,22 @@ const { circulationPredictor } = require("./src/predictors");
 
 // User Inputs
 const plate = "afk-123";
-const date = "2021/03/9";
+const date = "2021/2/28";
 const time = "17:05";
 
 // Inputs validators
 const plateValidator = (input) => /^[a-zA-Z]{3}[-\s.][0-9]{3,4}$/gm.test(input);
-const dateValidator = (input) =>
-  /^[0-9]{4}[/][0-9]{1,2}[/][0-9]{1,2}$/gm.test(input);
+const dateValidator = (input) => {
+  let isValidDate;
+  if (/^[0-9]{4}[/][0-9]{1,2}[/][0-9]{1,2}$/gm.test(input)) {
+    const [year, month, day] = input.split("/");
+    const date = new Date(`${year}-${month}-${day} 00:00`);
+    isValidDate = Boolean(+date) && date.getDate() == day;
+  } else {
+    isValidDate = false;
+  }
+  return isValidDate;
+};
 const timeValidator = (input) => /^[0-9]{1,2}[:.][0-9]{1,2}$/gm.test(input);
 
 // Input objects instantiation
