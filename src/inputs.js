@@ -23,32 +23,29 @@ const getDayOfWeek = (state) => ({
   },
 });
 
+// User input
+const userInput = (value, validator) => ({
+  value,
+  isValid: validator(value),
+});
+
 // Plate input factory
 const plateInput = (value, validator) => {
-  let state = {
-    value,
-    isValid: validator(value),
-  };
+  const state = userInput(value, validator);
 
   return { ...state, ...getPlateLastDigit(state) };
 };
 
 // Time input factory
 const timeInput = (value, validator) => {
-  let state = {
-    value,
-    isValid: validator(value),
-  };
+  const state = userInput(value, validator);
 
   return { ...state, ...convertToDecimalHour(state) };
 };
 
 // Date input factory
 const dateInput = (value, validator) => {
-  let state = {
-    value,
-    isValid: validator(value),
-  };
+  const state = userInput(value, validator);
 
   return { ...state, ...getDayOfWeek(state) };
 };
