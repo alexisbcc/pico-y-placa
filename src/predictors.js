@@ -31,7 +31,7 @@ const circulationPredictor = (
   timeRangesUnderControl,
   platesNotCirculateByUTCDay
 ) => {
-    let state = {
+    const state = {
       timeRanges: TimeRangesToDecimalHours(timeRangesUnderControl),
       platesNotCirculateByUTCDay,
     };
